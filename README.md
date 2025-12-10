@@ -1,7 +1,6 @@
 #EventFacilitationSystem
 A Django-based Event Management System for schools and organizations.
 ## Features
-
 ### Admin
 - Create and approve events
 - Allocate venues/resources
