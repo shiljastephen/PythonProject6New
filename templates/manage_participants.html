@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h2 class="mb-3">Manage Participants – {{ event.name }}</h2>
+<form method="POST" class="mb-4">
+    {% csrf_token %}
+    <label for="username">Enter student username:</label>
+    <input type="text" name="username" id="username" placeholder="Enter username" class="form-control w-50 d-inline-block">
+    <button type="submit" class="btn btn-primary">Add Participant</button>
+</form>
+
+<hr>
+<h3>Participants</h3>
+<table class="table table-bordered table-striped mt-3">
+    <thead class="table-dark">
+        <tr>
+            <th>Username</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for reg in participants %}
+    <tr>
+        <td>{{ reg.user.username }}</td>
+        <td>
+            <a href="?remove={{ reg.user.id }}"
+               class="btn btn-danger btn-sm"
+               onclick="return confirm('Are you sure you want to remove this participant?');">
+               Remove
+            </a>
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="2" class="text-center">No participants registered yet.</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

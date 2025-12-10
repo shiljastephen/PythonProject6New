@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% block title %}{{ event.name }}{% endblock %}
+{% block content %}
+<div class="card shadow-sm border-0 mb-4">
+    <div class="card-body">
+        <h2 class="fw-bold">{{ event.name }}</h2>
+
+        <span class="badge bg-primary mb-3">
+            {{ event.get_event_type_display }}
+        </span>
+        <p><strong>Department:</strong> {{ event.department }}</p>
+        <p>
+            <strong>Date & Time:</strong>
+            <span class="text-secondary">{{ event.date_time|date:"M d, Y H:i" }}</span>
+        </p>
+
+        <p>
+            <strong>Duration:</strong>
+            {{ event.duration_hours }} hours
+        </p>
+
+        <p>
+            <strong>Venue:</strong>
+            {% if event.venue %}
+                <span class="text-success">{{ event.venue.name }}</span>
+            {% else %}
+                <span class="text-muted">To Be Announced</span>
+            {% endif %}
+        </p>
+
+        <p>
+            <strong>Target Groups:</strong>
+            {{ event.target_groups }}
+        </p>
+
+        <p>
+            <strong>Resources:</strong>
+            {{ event.resources|default:"None" }}
+        </p>
+        <div>
+        {% if user.is_authenticated and user.profile.role == "teacher" and event.created_by == user %}
+                <a href="{% url 'manage_participants' event.id %}" class="btn btn-warning mt-3">
+                     Manage Participants
+                </a>
+            {% endif %}
+        </div>
+        {% if user.is_authenticated %}
+        <div class="mt-4 d-flex gap-2 flex-wrap">
+
+            <a href="{% url 'register_event' event.id %}" class="btn btn-success px-4">
+                Register
+            </a>
+            <a href="{% url 'cancel_registration' event.id %}" class="btn btn-success px-4">
+                Cancel Register
+            </a>
+            <a href="{% url 'submit_feedback' event.id %}" class="btn btn-outline-secondary px-4">
+                Submit Feedback
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+<!-- Registered Users Section -->
+<div class="card shadow-sm border-0 mb-4">
+    <div class="card-body">
+
+        <h4 class="fw-bold mb-3">Registered Users</h4>
+
+        {% if registrations %}
+        <ul class="list-group list-group-flush">
+            {% for reg in registrations %}
+            <li class="list-group-item">
+                <strong>{{ reg.user.username }}</strong>
+                <span class="text-muted" style="font-size: 0.85em;">
+                    - {{ reg.timestamp|date:"M d, Y H:i" }}
+                </span>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p class="text-muted">No registrations yet.</p>
+        {% endif %}
+    </div>
+</div>
+<div class="card shadow-sm border-0">
+    <div class="card-body">
+        <h4 class="fw-bold mb-3">Feedback</h4>
+
+        {% if feedbacks %}
+            {% for fb in feedbacks %}
+            <div class="card mb-3 border-0 shadow-sm">
+                <div class="card-body">
+                    <strong>{{ fb.user.username }}</strong>
+                    <span class="badge bg-warning text-dark">{{ fb.rating }}/5</span>
+
+                    <p class="mt-2">{{ fb.comments }}</p>
+
+                    <div class="text-muted" style="font-size: 0.85em;">
+                        {{ fb.submitted_at|date:"M d, Y H:i" }}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p class="text-muted">No feedback yet.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

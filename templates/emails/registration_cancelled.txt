@@ -1,0 +1,12 @@
+Hello {{ user.username }},
+
+Your registration for the following event has been successfully cancelled:
+
+Event: {{ event.name }}
+Date & Time: {{ event.date_time }}
+Venue: {% if event.venue %}{{ event.venue.name }}{% else %}To Be Announced{% endif %}
+
+We hope to see you in future events!
+
+Regards,
+Event Facilitation System

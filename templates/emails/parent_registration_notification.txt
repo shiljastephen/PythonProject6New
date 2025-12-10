@@ -1,0 +1,12 @@
+Hello,
+
+We would like to inform you that your child {{ student.username }} has registered for an event:
+
+Event: {{ event.name }}
+Date & Time: {{ event.date_time }}
+Venue: {% if event.venue %}{{ event.venue.name }}{% else %}To Be Announced{% endif %}
+
+This message is sent for your awareness and event tracking.
+
+Regards,
+Event Facilitation System

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Submit Feedback{% endblock %}
+{% block content %}
+<div class="card p-4 mb-4">
+    <h2 class="mb-3">Submit Feedback for <span class="text-primary">{{ event.name }}</span></h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary mt-2">Submit Feedback</button>
+    </form>
+</div>
+{% endblock %}

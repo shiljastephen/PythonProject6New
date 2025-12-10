@@ -1,0 +1,12 @@
+Hello,
+
+This is to inform you that your child {{ student.username }} has cancelled their registration for the event:
+
+Event: {{ event.name }}
+Date & Time: {{ event.date_time }}
+Venue: {% if event.venue %}{{ event.venue.name }}{% else %}To Be Announced{% endif %}
+
+This notification is sent to keep you updated.
+
+Regards,
+Event Facilitation System

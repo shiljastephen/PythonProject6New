@@ -1,0 +1,12 @@
+Hello,
+
+Your child {{ student.username }} has submitted feedback for the event:
+
+Event: {{ event.name }}
+Rating: {{ feedback.rating }}/5
+Comments: {{ feedback.comments }}
+
+This message is to keep you informed.
+
+Regards,
+Event Facilitation System

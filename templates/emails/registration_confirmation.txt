@@ -1,0 +1,13 @@
+Hello {{ user.username }},
+
+You have successfully registered for the event:
+
+Event: {{ event.name }}
+Date & Time: {{ event.date_time }}
+Venue: {% if event.venue %}{{ event.venue.name }}{% else %}To Be Announced{% endif %}
+
+Thank you for your participation!
+Wishing you a great event experience.
+
+Regards,
+Event Facilitation System
