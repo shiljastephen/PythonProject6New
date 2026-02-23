@@ -26,7 +26,7 @@ class EventForm(forms.ModelForm):
         widgets = {
             'date_time': forms.DateTimeInput(
                 attrs={'type': 'datetime-local'},
-                format='%Y-%m-%dT%H:%M'   # FIXED
+                format='%Y-%m-%dT%H:%M'
             ),
             'resources': forms.Textarea(attrs={'rows': 3}),
         }
@@ -37,4 +37,4 @@ class EventForm(forms.ModelForm):
 class FeedbackForm(forms.ModelForm):
     class Meta:
         model = Feedback
-        fields = ['rating', 'comments']  # FIXED (removed comma)
+        fields = ['rating', 'comments']

@@ -1,0 +1,76 @@
+/* Center Container */
+.feedback-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+/* Glass Effect Card */
+.feedback-card {
+    width: 60%;
+    max-width: 700px;
+    padding: 40px;
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Title */
+.feedback-title {
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #2c3e50;
+}
+
+.event-name {
+    color: #6f42c1;
+}
+
+/* Form styling */
+.feedback-form p {
+    margin-bottom: 20px;
+}
+
+/* Input fields */
+.feedback-form input,
+.feedback-form select,
+.feedback-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+/* Focus effect */
+.feedback-form input:focus,
+.feedback-form textarea:focus,
+.feedback-form select:focus {
+    outline: none;
+    border-color: #6f42c1;
+    box-shadow: 0 0 5px rgba(111, 66, 193, 0.5);
+}
+
+/* Submit button */
+.submit-btn {
+    background: linear-gradient(135deg, #6f42c1, #9f7aea);
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(111, 66, 193, 0.4);
+}

@@ -1,0 +1,106 @@
+/* ===== Colorful Gradient Background ===== */
+body {
+    background: url("/static/images/bg.jpg.png") no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+}
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.25);
+    z-index: -1;
+}
+/* ===== Glassmorphism Container ===== */
+.container {
+    background: rgba(255, 255, 255, 0.15); /* transparent glass */
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-radius: 20px;
+    padding: 35px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.navbar-brand {
+    color: rgba(149, 47, 227, 0.933);
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+}
+.nav-link {
+    color: rgba(149, 47, 227, 0.933);
+    font-size: 2.0rem;
+    font-weight: 800;
+    text-align: center;
+}
+.navbar-toggler {
+    background:linear-gradient(45deg, #ff6a88, #667eea);
+}
+
+/* ===== Title Styling ===== */
+h1, h2 {
+    text-align: center;
+    font-weight: 800;
+    font-size: 2.3rem;
+    background: linear-gradient(45deg, #ff6a88, #667eea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
+}
+
+/* ===== Event Cards (Colorful) ===== */
+.card, .event-card {
+    border: none;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #a8edea, #fed6e3);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    transition: all 0.35s ease;
+}
+
+.card:hover, .event-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* ===== Event Titles ===== */
+.card h5, .event-card h5 {
+    font-weight: bold;
+    color: #222;
+}
+
+/* ===== Badges ===== */
+.badge {
+    background: linear-gradient(45deg, #ff512f, #dd2476);
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    border-radius: 20px;
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #764ba2, #ff6a88);
+    transform: scale(1.05);
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    background: linear-gradient(45deg, #ff6a88, #667eea); !important;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}

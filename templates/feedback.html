@@ -1,12 +1,25 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}Submit Feedback{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/feedback.css' %}">
+{% endblock %}
+
 {% block content %}
-<div class="card p-4 mb-4">
-    <h2 class="mb-3">Submit Feedback for <span class="text-primary">{{ event.name }}</span></h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary mt-2">Submit Feedback</button>
-    </form>
+<div class="feedback-container">
+    <div class="feedback-card">
+        <h2 class="feedback-title">
+            Submit Feedback for
+            <span class="event-name">{{ event.name }}</span>
+        </h2>
+
+        <form method="post" class="feedback-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="submit-btn">
+                Submit Feedback
+            </button>
+        </form>
+    </div>
 </div>
 {% endblock %}

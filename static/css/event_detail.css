@@ -1,0 +1,61 @@
+/* Center container with controlled width */
+.glass-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* Glass Effect Card */
+.glass-card {
+    width: 75%;                /* Controlled width */
+    max-width: 900px;          /* Prevents over stretching */
+    padding: 30px;
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+
+    transition: 0.3s ease;
+}
+
+/* Hover effect */
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Section title styling */
+.section-title {
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #2c3e50;
+}
+
+/* Registered user list */
+.list-group-item {
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Feedback card styling */
+.feedback-card {
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+}
+
+/* Rating badge */
+.badge.bg-warning {
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 0.85rem;
+}

@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}{{ event.name }}{% endblock %}
 {% block content %}
+
 <div class="card shadow-sm border-0 mb-4">
     <div class="card-body">
         <h2 class="fw-bold">{{ event.name }}</h2>
@@ -63,10 +64,10 @@
 
 
 <!-- Registered Users Section -->
-<div class="card shadow-sm border-0 mb-4">
-    <div class="card-body">
+<div class="glass-container">
+    <div class="glass-card">
 
-        <h4 class="fw-bold mb-3">Registered Users</h4>
+        <h4 class="section-title">Registered Users</h4>
 
         {% if registrations %}
         <ul class="list-group list-group-flush">
@@ -84,13 +85,13 @@
         {% endif %}
     </div>
 </div>
-<div class="card shadow-sm border-0">
-    <div class="card-body">
-        <h4 class="fw-bold mb-3">Feedback</h4>
+<div class="glass-container">
+    <div class="glass-card">
+        <h4 class="section-title">Feedback</h4>
 
         {% if feedbacks %}
             {% for fb in feedbacks %}
-            <div class="card mb-3 border-0 shadow-sm">
+            <div class="feedback-card">
                 <div class="card-body">
                     <strong>{{ fb.user.username }}</strong>
                     <span class="badge bg-warning text-dark">{{ fb.rating }}/5</span>
